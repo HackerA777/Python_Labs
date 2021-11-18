@@ -56,7 +56,7 @@ class Validator:
         True - номер валидный
         False - номер невалидный
         '''
-        check_number = "\\+\\d\\-\\(\\d+\\)\\-\\d+\\-\\d+\\-\\d+"
+        check_number = "\+\d\-\(\d+\)\-\d+\-\d+\-\d+"
         if re.match(check_number, self.__telephone):
             return True
         else:
@@ -75,7 +75,7 @@ class Validator:
     def check_inn(self) -> bool:
         '''Проверка ИННа физического лица на валидность.
          Валидным ИНН яляется 12-ти значная последовательность натуральных чисел'''
-        check_inn = "\\d{12}"
+        check_inn = "\d{12}"
         if re.match(check_inn, str(self.__inn)):
             return True
         else:
@@ -84,7 +84,7 @@ class Validator:
     def check_passport_number(self) -> bool:
         ''' Проверка номера паспорта на валидность.
         Валидным номером является последоватьльность из 6-ти натуральных чисел'''
-        check_passport_number = "\\d{6}"
+        check_passport_number = "\d{6}"
         if re.match(check_passport_number, str(self.__passport_number)):
             return True
         else:
@@ -93,7 +93,7 @@ class Validator:
     def check_university(self) -> bool:
         '''Проверка наименования иниверситета на валидность.
         Валидным наиминованием является полное название со всеми пробелами, абриавиатура'''
-        check_university = "^[А-Я]+\\s*[а-я-.\\s]+\\s*?\\s([А-Я][А-я-.\\s]+\\s*[А-я-.\\s]+)|[А-я-]+\\s+[а-я\\s-]+\\s+[а-я]*|[А-я]{2}[а-я]*[А-Я]{2}"
+        check_university = "^[А-Я]+\s*[а-я-.\s]+\s*?\s([А-Я][А-я-.\s]+\s*[А-я-.\s]+)|[А-я-]+\s+[а-я\s-]+\s+[а-я]*|[А-я]{2}[а-я]*[А-Я]{2}"
         if re.match(check_university, self.__university):
             return True
         else:
@@ -130,7 +130,7 @@ class Validator:
         '''Проверка адреса на валидность.
         Адрес является валидным если он записан в форме "улица пробел номер дома"
         Например: ул. Истринская 982'''
-        check_address = "^[А-я]+\\.\\s[А-я-.()0-9\\s]+\\d+|^[А-я]+\\s[А-я-0-9().\\s]+\\d+|^[А-я]+\\.\\s[А-я-.\\s]+\\d+"
+        check_address = "^[А-я]+\.\s[А-я-.()0-9\s]+\d+|^[А-я]+\s[А-я-0-9().\s]+\d+|^[А-я]+\.\s[А-я-.\s]+\d+"
         if re.match(check_address, self.__address):
             return True
         else:
