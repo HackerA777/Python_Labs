@@ -1,1 +1,0 @@
-{"errors in telephone": 1000, "errors in weight": 1000, "errors in inn": 956, "errors in passport_number": 943, "errors in university": 5532, "errors in age": 1000, "errors in political_views": 1000, "errors in worldview": 1000, "errors in address": 1000}
